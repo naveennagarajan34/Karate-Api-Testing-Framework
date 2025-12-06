@@ -1,0 +1,29 @@
+# 💡 Maven/Java
+##################################
+# Maven build directory
+/target/
+# IntelliJ IDEA build directory
+/out/
+# Maven wrapper files (optional, remove if you use them)
+.mvn/wrapper/maven-wrapper.jar
+
+# 🖥️ IDE & OS Files
+##################################
+# Eclipse
+.classpath
+.project
+.settings/
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+
+# Operating System (Windows/macOS)
+*.DS_Store
+Thumbs.db
