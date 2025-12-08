@@ -1,6 +1,6 @@
 Feature: Tests for the conduit Homepage
 
-Background: Defie Url
+Background: Define Url
         Given url 'https://conduit-api.bondaracademy.com/api'
 
 Scenario: Get all tags
