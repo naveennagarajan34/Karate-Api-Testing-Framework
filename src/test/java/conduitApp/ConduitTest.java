@@ -9,16 +9,21 @@ import org.junit.jupiter.api.Test;
 
 class ConduitTest {
 
-    @Test
-    void testParallel() {
-        Results results = Runner.path("classpath:conduitApp")
-                // .outputCucumberJson(true)
-                .parallel(5);
-        assertEquals(0, results.getFailCount(), results.getErrorMessages());
-    }
+    // @Test
+    // void testParallel() {
+    // Results results = Runner.path("classpath:conduitApp")
+    // // .outputCucumberJson(true)
+    // .parallel(5);
+    // assertEquals(0, results.getFailCount(), results.getErrorMessages());
+    // }
+
+    // @Karate.Test
+    // Karate testTags() {
+    // return Karate.run().tags("@debug").relativeTo(getClass());
+    // }
 
     @Karate.Test
-    Karate testTags() {
-        return Karate.run().tags("@debug").relativeTo(getClass());
+    Karate runAll() {
+        return Karate.run().relativeTo(getClass());
     }
 }
