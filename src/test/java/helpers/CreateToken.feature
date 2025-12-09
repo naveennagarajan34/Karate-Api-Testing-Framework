@@ -1,9 +1,9 @@
 Feature: Create a token
 
 Scenario: Sign in and get the Authorization token
-    Given url 'https://conduit-api.bondaracademy.com/api'
+    Given url apiUrl
     Given path '/users/login'
-    And request {"user":{"email":"#(email)","password":"#(password)"}}
+    And request {"user":{"email":"#(userEmail)","password":"#(userPassword)"}}
     When method post
     Then status 200
     * def authToken = response.user.token
