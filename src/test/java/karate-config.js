@@ -1,18 +1,23 @@
 function fn() {
   var env = karate.env; // get system property 'karate.env'
-  karate.log('karate.env system property was:', env);
+  karate.log("karate.env system property was:", env);
   if (!env) {
-    env = 'dev';
+    env = "dev";
   }
   var config = {
-    env: env,
-    myVarName: 'someValue'
+    apiUrl: "https://conduit-api.bondaracademy.com/api",
+  };
+  if (env == "dev") {
+    config.userEmail = "naveennagarajan@gmail.com";
+    config.userPassword = "Test@123";
+  } else if (env == "qa") {
+    config.userEmail = "naveen@gmail.com";
+    config.userPassword = "Test@123";
   }
-  if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
-  }
+  var accessToken = karate.callSingle(
+    "classpath:helpers/CreateToken.feature",
+    config
+  ).authToken;
+  karate.configure("headers", { Authorization: "Token " + accessToken });
   return config;
 }

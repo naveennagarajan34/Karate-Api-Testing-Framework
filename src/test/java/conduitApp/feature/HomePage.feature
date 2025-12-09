@@ -1,10 +1,9 @@
 Feature: Tests for the conduit Homepage
 
 Background: Define Url
-        Given url 'https://conduit-api.bondaracademy.com/api'
-@debug
+        Given url apiUrl
+
 Scenario: Get all tags
-    Given url 'https://conduit-api.bondaracademy.com/api' 
     Given path '/tags'
     When method Get
     Then status 200
@@ -17,15 +16,15 @@ Scenario: Get 10 articles on the page
     Given url 'https://conduit-api.bondaracademy.com/api/articles?limit=10&offset=0'
     When method Get
     Then status 200
-@ignore
-Scenario: Get 10 articles on the page
+
+Scenario: Individual parameters
     Given param limit = 10
     Given param offset = 0
-    Given url 'https://conduit-api.bondaracademy.com/api/articles'
+    Given path 'articles'
     When method Get
     Then status 200
 
-Scenario: Get 10 articles on the page
+Scenario: Combined Parameters
     Given params {limit: 10, offset: 0}
     Given path '/articles'
     When method Get
