@@ -14,10 +14,10 @@ function fn() {
     config.userEmail = "naveen@gmail.com";
     config.userPassword = "Test@123";
   }
-  var accessToken = karate.callSingle(
-    "classpath:helpers/CreateToken.feature",
-    config
-  ).authToken;
-  karate.configure("headers", { Authorization: "Token " + accessToken });
+  // var accessToken = karate.callSingle(
+  //   "classpath:helpers/CreateToken.feature",
+  //   config
+  // ).authToken;
+  // karate.configure("headers", { Authorization: "Token " + accessToken });
   return config;
 }
