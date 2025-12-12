@@ -24,8 +24,7 @@ function fn() {
   }
   // call Single method to call feature file once.... karate-config.js file is execute for each scenario...so preferred callSingle() method
   var accessToken = karate.callSingle(
-    "classpath:helpers/CreateToken.feature",
-    config
+    "classpath:helpers/CreateToken.feature",config
   ).authToken;
 
   // Configuring header globally
