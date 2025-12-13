@@ -9,7 +9,7 @@ public class DataGenerator {
         String email = faker.name().firstName().toLowerCase() + "@naveen.in";
         return email;
     }
-        public static String getUserName() {
+        public static String getRandomUserName() {
         Faker faker = new Faker();
         String username = faker.name().username().toLowerCase();
         return username;
