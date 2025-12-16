@@ -2,6 +2,7 @@ Feature: Signup functionality
 
 Background: Define BaseUrl
     # apiUrl is defined in karate-config.js
+    # Java file doesn't need extension to be mentioned
     Given url apiUrl
     * def randomData = Java.type('helpers.DataGenerator')
 
