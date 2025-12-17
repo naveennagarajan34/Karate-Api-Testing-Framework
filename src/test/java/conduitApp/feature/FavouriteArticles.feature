@@ -18,4 +18,11 @@ Scenario: Add to Favorites with Article Id
     And request {}
     When method post
     Then status 200
-    Then match response.article.favoritesCount == initialCount+1
+    * def afterFavCount = response.article.favoritesCount
+    Then match afterFavCount == initialCount+1
+
+    Given path 'articles',slugId,'favorite'
+    When method delete
+    Then status 200
+    * def afterUnfavcount = response.article.favoritesCount
+    Then match afterUnfavcount == afterFavCount - 1
