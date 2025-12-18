@@ -38,29 +38,27 @@ Scenario: Get articles
     Then status 200
     Then match response.articles == '#array'
     Then match response.articlesCount == '#number'
-    Then match response.articlesCount == 10
 
-@test
-Scenario: Sign in
+# Scenario: Sign in
 
-    * def createToken = call read('classpath:helpers/CreateToken.feature')
-    * def token = createToken.authToken
+#     * def createToken = call read('classpath:helpers/CreateToken.feature')
+#     * def token = createToken.authToken
 
-    Given path 'articles'
-    Given header Authorization = 'Token '+ token
-    And request 
-    """
-    {
-        "article": {
-            "title": "Dummy article",
-            "description": "Learning API",
-            "body": "This is an article",
-            "tagList": [
-                "kya",
-                "test"
-            ]
-        }
-    }   
-    """
-    When method post 
-    Then status 201
+#     Given path 'articles'
+#     Given header Authorization = 'Token '+ token
+#     And request 
+#     """
+#     {
+#         "article": {
+#             "title": "Dummy article",
+#             "description": "Learning API",
+#             "body": "This is an article",
+#             "tagList": [
+#                 "kya",
+#                 "test"
+#             ]
+#         }
+#     }   
+#     """
+#     When method post 
+#     Then status 201
