@@ -1,4 +1,4 @@
-Feature: Hooks
+Feature: Hooks concepts
 
 Background:
     # This is Before Hook, executed before each Scenario
