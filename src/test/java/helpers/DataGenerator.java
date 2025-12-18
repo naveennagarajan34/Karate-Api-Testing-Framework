@@ -14,4 +14,10 @@ public class DataGenerator {
         String username = faker.name().username().toLowerCase();
         return username;
     }
+
+    public static String getRandomTitle() {
+        Faker faker = new Faker();
+        String title = faker.gameOfThrones().character();
+        return title;
+    }
 }
