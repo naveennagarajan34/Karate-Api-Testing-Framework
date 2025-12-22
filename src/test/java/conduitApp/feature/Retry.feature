@@ -14,3 +14,10 @@ Scenario: Get First article and Like if it is not already Liked
     And retry until response.articles[0].favoritesCount == 1
     When method Get
     Then status 200
+
+Scenario: Sleep functionality
+    * def sleep = function(pause) {java.lang.Thread.sleep(pause)}
+    * print '1'
+    * eval sleep(3000)
+    * print '2'
+    * eval sleep(3000)
