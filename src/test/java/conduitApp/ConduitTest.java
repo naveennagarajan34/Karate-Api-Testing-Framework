@@ -24,7 +24,7 @@ class ConduitTest {
     void testParallel() {
     Results results = Runner.path("classpath:conduitApp")
     .outputCucumberJson(true)
-    .parallel(2);
+    .parallel(3);
     // @parallel=false  can be used on the top of the feature or Scenario if needed to run sequentially 
         
     generateReport(results.getReportDir());
