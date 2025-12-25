@@ -9,7 +9,7 @@ function fn() {
 
   // Base url is configured
   var config = {
-    apiUrl: "https://conduit-api.bondaracademy.com/api",
+    // apiUrl: "https://conduit-api.bondaracademy.com/api",
   };
 
   // Below block for dev environment
@@ -23,11 +23,11 @@ function fn() {
     config.userPassword = "Test@123";
   }
   // call Single method to call feature file once.... karate-config.js file is execute for each scenario...so preferred callSingle() method
-  var accessToken = karate.callSingle(
-    "classpath:helpers/CreateToken.feature",config
-  ).authToken;
+  // var accessToken = karate.callSingle(
+  //   "classpath:helpers/CreateToken.feature",config
+  // ).authToken;
 
   // Configuring header globally
-  karate.configure("headers", { Authorization: "Token " + accessToken });
+  // karate.configure("headers", { Authorization: "Token " + accessToken });
   return config;
 }
