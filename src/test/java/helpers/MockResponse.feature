@@ -50,5 +50,3 @@ Scenario:
         }
         }
     """
-
-    * return mockResponse
