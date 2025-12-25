@@ -1,4 +1,4 @@
-Feature: Simple Assertion
+Feature: Simple Match
 
 Background:
     * def mock = call read('classpath:helpers/MockResponse.feature')
