@@ -52,7 +52,15 @@ Scenario: Create a new Product
     And multipart field productPrice = "64000"
     And multipart field productDescription = 'Core i7, 16GB RAM, 1TB SSD'
     And multipart field productFor = 'All'
-
     Given multipart file productImage = {read: "classpath:helpers/elite.jpg", contentType: 'image/jpeg'}
+    
     When method post
     Then status 201
+    Then match response.message == "Product Added Successfully"
+    Then match response.productId == "#notnull"
+    * def productId = response.productId
+    Given header Authorization = token
+    Given path 'product/delete-product/' + productId
+    When method delete
+    Then status 200
+    Then match response.message == "Product Deleted Successfully"
