@@ -62,3 +62,7 @@ Scenario: Match each in a array
     * match each response.user.projects.completedProjects[*].status == 'delivered'
     * match each response.user.skills[*].years == '#? _ > 0'
     * match each response.user.skills[*].name == '#string'
+
+Scenario: Match concept and Array length
+    * assert response.user.skills.length == 3
+    * match response.user.skills == '#[3]'
