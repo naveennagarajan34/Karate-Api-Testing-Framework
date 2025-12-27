@@ -35,6 +35,26 @@ Scenario: Orders response
                 { "name": "Case", "category": "Accessories", "price": 200 }
             ],
             "customer": { "vip": true, "country": "UK" }
+            },
+            {
+            "id": "ORD104",
+            "status": "pending",
+            "amount": 1200,
+            "items": [
+                { "name": "Headphone", "category": "Electronics", "price": 500 },
+                { "name": "Case", "category": "Accessories", "price": 200 }
+            ],
+            "customer": { "vip": false, "country": "UK" }
+            },
+            {
+            "id": "ORD105",
+            "status": "delivered",
+            "amount": 1200,
+            "items": [
+                { "name": "Hp Elite book", "category": "Computers / Laptop", "price": 10000 },
+                { "name": "Bag", "category": "Accessories", "price": 600 }
+            ],
+            "customer": { "vip": true, "country": "India" }
             }
         ]
         }
